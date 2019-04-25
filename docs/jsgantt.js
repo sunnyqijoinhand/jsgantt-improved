@@ -42,6 +42,10 @@ exports.GanttChart = function (pDiv, pFormat) {
     this.vShowTaskInfoComp = 1;
     this.vShowTaskInfoStartDate = 1;
     this.vShowTaskInfoEndDate = 1;
+    //-- add show plan date to Task info tooltip -- 
+    this.vShowTaskInfoPlanStartDate = 1;
+    this.vShowTaskInfoPlanEndDate = 1;
+    //-- add show plan date to Task info tooltip -- 
     this.vShowTaskInfoNotes = 1;
     this.vShowTaskInfoLink = 0;
     this.vEventClickRow = 1;
@@ -916,12 +920,17 @@ exports.GanttChart = function (pDiv, pFormat) {
                 var ad = new Date();
                 console.log('after tasks loop', ad, (ad.getTime() - bd_1.getTime()));
             }
+            /*
             if (!vSingleCell) {
                 vTmpTBody.appendChild(vDateRow.cloneNode(true));
             }
             else if (this.vFormat == 'day') {
                 vTmpTBody.appendChild(vTmpRow.cloneNode(true));
             }
+            */
+            // --- ALWAYS SHOW BOTTOM LINE ---
+            vTmpTBody.appendChild(vDateRow.cloneNode(true));
+            // --- ALWAYS SHOW BOTTOM LINE ---
             // MAIN VIEW: Appending all generated components to main view
             while (this.vDiv.hasChildNodes())
                 this.vDiv.removeChild(this.vDiv.firstChild);
@@ -1575,7 +1584,7 @@ exports.addJSONTask = function (pGanttVar, pJsonObj) {
 },{"./task":8}],6:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var es = {
+/*var es = {
     'january': 'Enero',
     'february': 'Febrero',
     'march': 'Marzo',
@@ -1647,7 +1656,8 @@ var es = {
     'mths': 'Meses',
     'qtrs': 'Trims'
 };
-exports.es = es;
+exports.es = es;*/
+//ONLY en language needed as addLang('',{}) can do these things.
 var en = {
     'format': 'Format',
     'hour': 'Hour',
@@ -1721,7 +1731,7 @@ var en = {
     'sat': 'Sat'
 };
 exports.en = en;
-var de = {
+/*var de = {
     'format': 'Ansicht',
     'hour': 'Stunde',
     'day': 'Tag',
@@ -2293,7 +2303,7 @@ var id = {
     'fri': 'Jum',
     'sat': 'Sab'
 };
-exports.id = id;
+exports.id = id;*/
 
 },{}],7:[function(require,module,exports){
 "use strict";
@@ -2352,6 +2362,10 @@ exports.includeGetSet = function () {
     this.setShowTaskInfoComp = function (pVal) { this.vShowTaskInfoComp = pVal; };
     this.setShowTaskInfoStartDate = function (pVal) { this.vShowTaskInfoStartDate = pVal; };
     this.setShowTaskInfoEndDate = function (pVal) { this.vShowTaskInfoEndDate = pVal; };
+    //-- show plan date in tooltip --
+    this.setShowTaskInfoPlanStartDate = function (pVal) { this.vShowTaskInfoPlanStartDate = pVal; };
+    this.setShowTaskInfoPlanEndDate = function (pVal) { this.vShowTaskInfoPlanEndDate = pVal; };
+    //-- show plan date in tooltip --
     this.setShowTaskInfoNotes = function (pVal) { this.vShowTaskInfoNotes = pVal; };
     this.setShowTaskInfoLink = function (pVal) { this.vShowTaskInfoLink = pVal; };
     this.setShowEndWeekDate = function (pVal) { this.vShowEndWeekDate = pVal; };
@@ -2446,6 +2460,10 @@ exports.includeGetSet = function () {
     this.getShowTaskInfoComp = function () { return this.vShowTaskInfoComp; };
     this.getShowTaskInfoStartDate = function () { return this.vShowTaskInfoStartDate; };
     this.getShowTaskInfoEndDate = function () { return this.vShowTaskInfoEndDate; };
+    //-- show plan date in task info tooltip
+    this.getShowTaskInfoPlanStartDate = function () { return this.vShowTaskInfoPlanStartDate; };
+    this.getShowTaskInfoPlanEndDate = function () { return this.vShowTaskInfoPlanEndDate; };
+    //-- show plan date in task info tooltip
     this.getShowTaskInfoNotes = function () { return this.vShowTaskInfoNotes; };
     this.getShowTaskInfoLink = function () { return this.vShowTaskInfoLink; };
     this.getShowEndWeekDate = function () { return this.vShowEndWeekDate; };
@@ -2952,10 +2970,20 @@ exports.createTaskInfo = function (pTask) {
     var vTaskInfoBox = document.createDocumentFragment();
     var vTaskInfo = this.newNode(vTaskInfoBox, 'div', null, 'gTaskInfo');
     this.newNode(vTaskInfo, 'span', null, 'gTtTitle', pTask.getName());
+    if (this.vShowTaskInfoPlanStartDate == 1) {
+        vTmpDiv = this.newNode(vTaskInfo, 'div', null, 'gTILine gTIsd');
+        this.newNode(vTmpDiv, 'span', null, 'gTaskLabel', this.vLangs[this.vLang]['planstartdate'] + ': ');
+        this.newNode(vTmpDiv, 'span', null, 'gTaskText', utils_1.formatDateStr(pTask.getPlanStart(), this.vDateTaskDisplayFormat, this.vLangs[this.vLang]));
+    }
     if (this.vShowTaskInfoStartDate == 1) {
         vTmpDiv = this.newNode(vTaskInfo, 'div', null, 'gTILine gTIsd');
         this.newNode(vTmpDiv, 'span', null, 'gTaskLabel', this.vLangs[this.vLang]['startdate'] + ': ');
         this.newNode(vTmpDiv, 'span', null, 'gTaskText', utils_1.formatDateStr(pTask.getStart(), this.vDateTaskDisplayFormat, this.vLangs[this.vLang]));
+    }
+    if (this.vShowTaskInfoPlanEndDate == 1) {
+        vTmpDiv = this.newNode(vTaskInfo, 'div', null, 'gTILine gTIed');
+        this.newNode(vTmpDiv, 'span', null, 'gTaskLabel', this.vLangs[this.vLang]['planenddate'] + ': ');
+        this.newNode(vTmpDiv, 'span', null, 'gTaskText', utils_1.formatDateStr(pTask.getPlanEnd(), this.vDateTaskDisplayFormat, this.vLangs[this.vLang]));
     }
     if (this.vShowTaskInfoEndDate == 1) {
         vTmpDiv = this.newNode(vTaskInfo, 'div', null, 'gTILine gTIed');
