@@ -779,7 +779,7 @@ td.gspanning div { *overflow: hidden; }
 	border-radius: 0px;
 	background: #ffffff;
 	border:0px;
-	/*border: 1px solid #c0c0c0;*/
+	border: 1px solid #c0c0c0;
 }
 
 .gantt-scroll-controll::-webkit-scrollbar-track
@@ -795,3 +795,7 @@ td.gspanning div { *overflow: hidden; }
 	background: #ffffff;
 }
 
+
+/*
+https://github.com/jsGanttImproved/jsgantt-improved/blob/master/Documentation.md
+*/
