@@ -91,15 +91,19 @@ td.gspanning
 .gtaskname
 {
 	height: 18px;
-	white-space: nowrap;
 	border: #efefef 1px solid;
-	min-width: 200px;
-	width: 200px;
+	min-width: 250px;
+	width: 250px;
+	min-width: 250px;
+	overflow: hidden;
 }
 
 .gtaskname div
 {
 	white-space: nowrap;
+	min-width: 250px;
+	width: 250px;
+	min-width: 250px;
 	overflow: hidden;
 	cursor: pointer;
 	text-align: left;
