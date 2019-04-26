@@ -7,41 +7,7 @@ jQuery 1.8+ required!
 
 DEMO CODES:
 
-<div style="margin:20px;">
-	<div id="OSgwnGantt" class="gantt"><div style="padding:20px;text-align:center;"><img src="/siteman.nsf/data_loading.gif" /></div></div>
-	<div id="OSgwnGanttButton" style="font-size:12px;"></div>
-</div>
-<script language="javascript">
-var GANTT = null;
-$(function(){
-	GANTT = DomPortalUI_Gantt( '#OSgwnGantt', 'day' , 300 , '/temp/temp.nsf/a01/?open&rnd='+Math.random() , {
-	} , function(gantt){
-		//before draw
-	} , function(gantt){
-		//after draw
-	},{
-		taskname:function(task){
-			console.log(task);
-			alert( task.getID() + ' , ' + task.getName() + ' , ' + task.getOriginalID() );
-		}
-		,start:function(task){
-			$('#OSgwnGantt>div.gchartcontainer>div.gmainright').scrollLeft( task.getStartX()-50 );
-		}
-		,planstart:function(task){
-			$('#OSgwnGantt>div.gchartcontainer>div.gmainright').scrollLeft( task.getStartX()-50 );
-		}
-		,end:function(task){
-			$('#OSgwnGantt>div.gchartcontainer>div.gmainright').scrollLeft( task.getEndX()-50 );
-		}
-		,planend:function(task){
-			$('#OSgwnGantt>div.gchartcontainer>div.gmainright').scrollLeft( task.getEndX()-50 );
-		}
-	});
-});
-</script>
 
-
-![Demo Image](/docs/demo.gif)
 
 
 Start using with including the files `jsgantt.js` and `jsgantt.css` that are inside `docs/` folder.
