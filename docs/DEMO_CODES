@@ -1,3 +1,6 @@
+<!-- jQuery 1.8+ required -->
+<script src="....jquery.min.js"></script>
+
 <div style="margin:20px;">
 	<div id="OSgwnGantt" class="gantt"><div style="padding:20px;text-align:center;"><img src="/siteman.nsf/data_loading.gif" /></div></div>
 	<div id="OSgwnGanttButton" style="font-size:12px;"></div>
