@@ -1066,7 +1066,7 @@
 						var vGanttChartBodyId = '#' + this.vDivId + '_OSgwn_GANTT_CHART_BODY';
 						var vGanttChartTableId = '#' + this.vDivId + '_ChartTableBody';
 						vGanttLeftPart.width(vGanttLeftPart.width() - 1).css('border-right', '1px solid #c0c0c0'); // add a line between left and right
-						$(vGanttChartBodyId).width($(vGanttChartTableId).outerWidth(true)); //adjust chart body DIV width to chart's width
+						$(vGanttChartBodyId).width($(vGanttChartTableId).width()+1); //adjust chart body DIV width to chart's width
 						//height control
 						if ($(vGanttListBodyId).height() > this.vGanttHeight - $(vGanttListHeadId).outerHeight(true) || $(vGanttChartBodyId).height() > this.vGanttHeight - $(vGanttChartHeadId).outerHeight(true)) {
 							//add a new part at right to show a vertical scroll bar
