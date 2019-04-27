@@ -1,113 +1,107 @@
-div.gantt
-{
-	font-size: 12px;
-	color: #000000;
-	background-color: #ffffff;
-	border: 1px solid #c0c0c0;
+div.gantt {
+    font-size: 12px;
+    color: #000000;
+    background-color: #ffffff;
+    border: 1px solid #c0c0c0;
 }
 
-.glineitem a
-{
-	color: #0000ff;
-	text-decoration: none;
+.glineitem a {
+    color: #0000ff;
+    text-decoration: none;
 }
 
-.gantt table { border-collapse: collapse; }
-.gantt td { padding: 0px; }
+.gantt table {
+    border-collapse: collapse;
+}
+
+.gantt td {
+    padding: 0px;
+}
 
 .gmajorheading,
 .gminorheading,
 .gminorheadingwkend,
 .gtaskcell,
-.gtaskcellwkend
-{
-	height: 21px;
-	font-size: 12px;
-	color: #999999;
-	border: #efefef 1px solid;
-	text-align: center;
-	cursor: default;
+.gtaskcellwkend {
+    height: 21px;
+    font-size: 12px;
+    color: #999999;
+    border: #efefef 1px solid;
+    text-align: center;
+    cursor: default;
 }
 
-.gtasklist
-{
-	height: 19px;
-	min-width: 5px;
-	max-width: 5px;
-	width: 5px;
-	border: #efefef 1px solid;
-	border-right: none;
+.gtasklist {
+    height: 19px;
+    min-width: 5px;
+    max-width: 5px;
+    width: 5px;
+    border: #efefef 1px solid;
+    border-right: none;
 }
 
 .gtaskheading,
 .gmajorheading,
-.gminorheading
-{
-	background-color: #ffffff;
-	font-weight: bold;
-	font-size: 12px;
-	text-align: center;
-	white-space: nowrap;
+.gminorheading {
+    background-color: #ffffff;
+    font-weight: bold;
+    font-size: 12px;
+    text-align: center;
+    white-space: nowrap;
 }
 
 .gtaskheading div,
 .gmajorheading div,
-.gminorheading div
-{
-	text-align: center;
-	white-space: nowrap;
+.gminorheading div {
+    text-align: center;
+    white-space: nowrap;
 }
 
 .gtaskcellwkend,
-.gminorheadingwkend
-{
-	background-color: #f7f7f7;
-	font-weight: bold;
-	font-size: 12px;
-	white-space: nowrap;
+.gminorheadingwkend {
+    background-color: #f7f7f7;
+    font-weight: bold;
+    font-size: 12px;
+    white-space: nowrap;
 }
 
-td.gtaskcell { text-align: left; }
-
-td.gspanning
-{
-	border-left: none;
-	border-right: none;
+td.gtaskcell {
+    text-align: left;
 }
 
-.gtaskcelldiv { position: relative; }
+td.gspanning {
+    border-left: none;
+    border-right: none;
+}
+
+.gtaskcelldiv {
+    position: relative;
+}
 
 .gtaskheading,
-.gname
-{
-	height: 18px;
-	white-space: nowrap;
-	border: #efefef 1px solid;
+.gname {
+    height: 18px;
+    white-space: nowrap;
+    border: #efefef 1px solid;
 }
 
-.gtaskheading, 
-.gtaskheading div { text-align: center; }
-
-.gtaskname
-{
-	height: 18px;
-	border: #efefef 1px solid;
-	min-width: 250px;
-	width: 250px;
-	min-width: 250px;
-	overflow: hidden;
+.gtaskheading,
+.gtaskheading div {
+    text-align: center;
 }
 
-.gtaskname div
-{
-	white-space: nowrap;
-	min-width: 250px;
-	width: 250px;
-	min-width: 250px;
-	overflow: hidden;
-	cursor: pointer;
-	text-align: left;
-	font-size: 12px;
+.gtaskname {
+    height: 18px;
+    border: #efefef 1px solid;
+    min-width: 250px;
+    width: 250px;
+}
+
+.gtaskname div {
+    white-space: nowrap;
+    cursor: pointer;
+    text-align: left;
+    font-size: 12px;
 }
 
 .gresource,
@@ -116,24 +110,22 @@ td.gspanning
 .gplanstartdate,
 .gplanenddate,
 .gcost,
-.genddate
-{
-	height: 18px;
-	white-space: nowrap;
-	border: #efefef 1px solid;
-	min-width: 150px;
-	width: 150px;
-	max-width: 150px;
+.genddate {
+    height: 18px;
+    white-space: nowrap;
+    border: #efefef 1px solid;
+    min-width: 150px;
+    width: 150px;
+    max-width: 150px;
 }
 
-.gpccomplete
-{
-	height: 18px;
-	white-space: nowrap;
-	border: #efefef 1px solid;
-	min-width: 50px;
-	width: 50px;
-	max-width: 50px;
+.gpccomplete {
+    height: 18px;
+    white-space: nowrap;
+    border: #efefef 1px solid;
+    min-width: 50px;
+    width: 50px;
+    max-width: 50px;
 }
 
 .gresource div,
@@ -143,150 +135,150 @@ td.gspanning
 .gplanstartdate div,
 .gplanenddate div,
 .gcost div,
-.genddate div
-{
-	white-space: nowrap;
-	overflow: hidden;
-	/*text-overflow: ellipsis;*/
-	cursor: pointer;
-	text-align: center;
-	font-size: 12px;
+.genddate div {
+    white-space: nowrap;
+    overflow: hidden;
+    /*text-overflow: ellipsis;*/
+    cursor: pointer;
+    text-align: center;
+    font-size: 12px;
 }
 
-.gselector
-{
-	text-align: left;
-	white-space: nowrap;
-	min-width: 200px;
-	max-width: 200px;
-	width: 300px;
-	font-weight: bold;
-	color: #000000;
+.gselector {
+    text-align: left;
+    white-space: nowrap;
+    min-width: 200px;
+    max-width: 200px;
+    width: 300px;
+    font-weight: bold;
+    color: #000000;
 }
 
-.gselector-row { background-color: #f8f8f8; }
-
-.gtaskbarcontainer.gplan
-{
-	position: absolute !important;
-	top: 0px;
-	opacity: 0.3;
-	background: white;
-	z-index: 4;
-	border: 1px solid black;
-	pointer-events: none;
+.gselector-row {
+    background-color: #f8f8f8;
 }
 
-.gformlabel
-{
-	position: relative;
-	top: 0px;
-	cursor: pointer;
-	border: 1px solid #f8f8f8;
-	margin-left: 5px;
-	padding-left: 2px;
-	padding-right: 2px;
+.gtaskbarcontainer.gplan {
+    position: absolute !important;
+    top: 0px;
+    opacity: 0.3;
+    background: white;
+    z-index: 4;
+    border: 1px solid black;
+    pointer-events: none;
+}
+
+.gformlabel {
+    position: relative;
+    top: 0px;
+    cursor: pointer;
+    border: 1px solid #f8f8f8;
+    margin-left: 5px;
+    padding-left: 2px;
+    padding-right: 2px;
 }
 
 span.gformlabel:hover,
-span.gselected
-{
-	background-color: #dbecff;
-	border: #cccccc 1px solid;
+span.gselected {
+    background-color: #dbecff;
+    border: #cccccc 1px solid;
 }
 
-span.gfoldercollapse
-{
-	color: #000000;
-	cursor: pointer;
-	font-weight: bold;
-	font-size: 12px;
+span.gfoldercollapse {
+    color: #000000;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 12px;
 }
 
 .gtasktableh,
-.gtasktable { border-right: #efefef 1px solid; }
+.gtasktable {
+    border-right: #efefef 1px solid;
+}
+
 .gcharttableh,
 .gtasktableh,
 .gtasktable,
-.gcharttable { border-collapse: collapse; }
-.gcharttable { border: #efefef 1px solid; }
+.gcharttable {
+    border-collapse: collapse;
+}
 
-.ggroupitem
-{
-	background-color: #fbfbfb;
-	font-weight: bold;
+.gcharttable {
+    border: #efefef 1px solid;
+}
+
+.ggroupitem {
+    background-color: #fbfbfb;
+    font-weight: bold;
 }
 
 .gmileitem,
-.glineitem { background-color: #ffffff; }
+.glineitem {
+    background-color: #ffffff;
+}
 
-.gitemhighlight td
-{
-	background-image: none;
-	background-color: #fffde5;
+.gitemhighlight td {
+    background-image: none;
+    background-color: #fffde5;
 }
 
 .gmilecaption,
 .ggroupcaption,
-.gcaption
-{
-	color: #000000;
-	font-size: 10px;
-	text-align: left;
-	white-space: nowrap;
-	position: absolute;
-	top: 2px;
+.gcaption {
+    color: #000000;
+    font-size: 10px;
+    text-align: left;
+    white-space: nowrap;
+    position: absolute;
+    top: 2px;
 }
 
 .ggroupcaption,
-.gcaption { right: -130px; }
-
-.gtaskcomplete
-{
-	float: left;
-	overflow: hidden;
+.gcaption {
+    right: -130px;
 }
 
-.gtaskcomplete
-{
-	height: 5px;
-	background-color: #000000;
-	margin-top: 4px;
-	opacity: 0.4;
-	filter: alpha(opacity=40);
+.gtaskcomplete {
+    float: left;
+    overflow: hidden;
 }
 
-.gmilestone
-{
-	font-size: 14px;
-	font-weight: bold;
-	color: #000000;
-	position: absolute;
-	top: -2px;
+.gtaskcomplete {
+    height: 5px;
+    background-color: #000000;
+    margin-top: 4px;
+    opacity: 0.4;
+    filter: alpha(opacity=40);
 }
 
-.gmdtop
-{
-	top: 2px;
-	overflow: hidden;
-	width: 0px;
-	height: 0px;
-	border-bottom: 5px solid black;
-	border-left: 5px solid transparent;
-	border-top: 5px solid transparent;
-	border-right: 5px solid transparent;
+.gmilestone {
+    font-size: 14px;
+    font-weight: bold;
+    color: #000000;
+    position: absolute;
+    top: -2px;
 }
 
-.gmdbottom
-{
-	top: 2px;
-	overflow: hidden;
-	width: 0px;
-	height: 0px;
-	border-top: 5px solid black;
-	border-left: 5px solid transparent;
-	border-bottom: 5px solid transparent;
-	border-right: 5px solid transparent;
+.gmdtop {
+    top: 2px;
+    overflow: hidden;
+    width: 0px;
+    height: 0px;
+    border-bottom: 5px solid black;
+    border-left: 5px solid transparent;
+    border-top: 5px solid transparent;
+    border-right: 5px solid transparent;
+}
+
+.gmdbottom {
+    top: 2px;
+    overflow: hidden;
+    width: 0px;
+    height: 0px;
+    border-top: 5px solid black;
+    border-left: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    border-right: 5px solid transparent;
 }
 
 .ggroupblack,
@@ -295,111 +287,82 @@ span.gfoldercollapse
 .gtaskgreen,
 .gtaskyellow,
 .gtaskpurple,
-.gtaskpink
-{
-	height: 13px;
-	filter: alpha(opacity=90);
-	opacity: 0.9;
-	margin-top: 1px;
+.gtaskpink {
+    height: 13px;
+    filter: alpha(opacity=90);
+    opacity: 0.9;
+    margin-top: 1px;
 }
 
-.ggroupblack
-{
-	height: 7px;
-	background: #000000;
-	margin-top: 2px;
+.ggroupblack {
+    height: 7px;
+    background: #000000;
+    margin-top: 2px;
 }
 
-.ggroupblackendpointleft
-{
-	overflow: hidden;
-	width: 0px;
-	height: 0px;
-	top: 2px;
-	border-top: 4px solid black;
-	border-left: 4px solid transparent;
-	border-bottom: 4px solid transparent;
-	border-right: 4px solid transparent;
-	float: left;
+.ggroupblackendpointleft {
+    overflow: hidden;
+    width: 0px;
+    height: 0px;
+    top: 2px;
+    border-top: 4px solid black;
+    border-left: 4px solid transparent;
+    border-bottom: 4px solid transparent;
+    border-right: 4px solid transparent;
+    float: left;
 }
 
-.ggroupblackendpointright
-{
-	overflow: hidden;
-	width: 0px;
-	height: 0px;
-	top: 2px;
-	border-top: 4px solid black;
-	border-left: 4px solid transparent;
-	border-bottom: 4px solid transparent;
-	border-right: 4px solid transparent;
-	float: right;
+.ggroupblackendpointright {
+    overflow: hidden;
+    width: 0px;
+    height: 0px;
+    top: 2px;
+    border-top: 4px solid black;
+    border-left: 4px solid transparent;
+    border-bottom: 4px solid transparent;
+    border-right: 4px solid transparent;
+    float: right;
 }
 
-.ggroupblackcomplete
-{
-	float: left;
-	overflow: hidden;
-	height: 3px;
-	filter: alpha(opacity=80);
-	opacity: 0.8;
-	background-color: #777777;
-	margin-top: 2px;
-	margin-bottom: 2px;
+.ggroupblackcomplete {
+    float: left;
+    overflow: hidden;
+    height: 3px;
+    filter: alpha(opacity=80);
+    opacity: 0.8;
+    background-color: #777777;
+    margin-top: 2px;
+    margin-bottom: 2px;
 }
 
-.gtaskblue
-{
-	/* Old browsers */
-	background: linear-gradient(to bottom, rgba(58, 132, 195, 1) 0%, rgba(65, 154, 214, 1) 20%, rgba(75, 184, 240, 1) 40%, rgba(58, 139, 194, 1) 70%, rgba(38, 85, 139, 1) 100%);
-	/* W3C */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4bb8f0', endColorstr='#3a84c3', GradientType=0);
-	/* IE6-9 */
+.gtaskblue {
+    background-color: rgb(34, 162, 248);
+    border: 1px solid rgb(3, 132, 218);
 }
 
-.gtaskred
-{
-	/* Old browsers */
-	background: linear-gradient(to bottom, rgba(196, 58, 58, 1) 0%, rgba(211, 65, 65, 1) 20%, rgba(239, 76, 76, 1) 40%, rgba(196, 58, 58, 1) 70%, rgba(135, 37, 37, 1) 100%);
-	/* W3C */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ef4c4c', endColorstr='#c43a3a', GradientType=0);
-	/* IE6-9 */
+.gtaskred {
+    background-color: rgb(255, 29, 29);
+    border: 1px solid rgb(196, 0, 0);
 }
 
-.gtaskgreen
-{
-	/* Old browsers */
-	background: linear-gradient(to bottom, rgba(80, 193, 58, 1) 0%, rgba(88, 209, 64, 1) 20%, rgba(102, 237, 75, 1) 40%, rgba(80, 193, 58, 1) 70%, rgba(53, 132, 37, 1) 100%);
-	/* W3C */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#66ED4B', endColorstr='#50c13a', GradientType=0);
-	/* IE6-9 */
+.gtaskgreen {
+    background-color: rgb(11, 197, 11);
+    border: 1px solid rgb(2, 143, 14);
 }
 
-.gtaskyellow
-{
-	/* Old browsers */
-	background: linear-gradient(to bottom, rgba(247, 228, 56, 1) 0%, rgba(239, 239, 55, 1) 20%, rgba(255, 255, 58, 1) 40%, rgba(242, 236, 55, 1) 70%, rgba(241, 218, 54, 1) 100%);
-	/* W3C */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffff3a', endColorstr='#f7e438', GradientType=0);
-	/* IE6-9 */
+.gtaskyellow {
+    background-color: rgb(255, 182, 23);
+    border: 1px solid rgb(253, 143, 0);
 }
 
-.gtaskpurple
-{
-	/* Old browsers */
-	background: linear-gradient(to bottom, rgba(193, 58, 193, 1) 0%, rgba(211, 65, 211, 1) 20%, rgba(239, 76, 239, 1) 40%, rgba(193, 58, 193, 1) 70%, rgba(137, 38, 137, 1) 100%);
-	/* W3C */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ef4cef', endColorstr='#892689', GradientType=0);
-	/* IE6-9 */
+.gtaskpurple {
+    background-color: rgb(200, 35, 250);
+    border: 1px solid rgb(164, 1, 170);
 }
 
-.gtaskpink
-{
-	/* Old browsers */
-	background: linear-gradient(to bottom, rgba(249, 177, 245, 1) 0%, rgba(247, 192, 243, 1) 20%, rgba(247, 202, 244, 1) 40%, rgba(249, 192, 246, 1) 70%, rgba(252, 174, 247, 1) 100%);
-	/* W3C */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f7caf4', endColorstr='#fcaef7', GradientType=0);
-	/* IE6-9 */
+.gtaskpink {
+    background-color: rgb(255, 47, 186);
+    border: 1px solid rgb(185, 0, 185);
 }
 
 .gtaskbluecomplete,
@@ -407,395 +370,409 @@ span.gfoldercollapse
 .gtaskgreencomplete,
 .gtaskyellowcomplete,
 .gtaskpurplecomplete,
-.gtaskpinkcomplete
-{
-	float: left;
-	overflow: hidden;
-	height: 5px;
-	filter: alpha(opacity=40);
-	opacity: 0.4;
-	background-color: #000000;
-	margin-top: 4px;
+.gtaskpinkcomplete {
+    float: left;
+    overflow: hidden;
+    height: 5px;
+    filter: alpha(opacity=40);
+    opacity: 0.4;
+    background-color: #000000;
+    margin-top: 4px;
 }
 
-.glinev
-{
-	border-left: 1px solid;
-	width: 0px;
+.glinev {
+    border-left: 1px solid;
+    width: 0px;
 }
 
-.glineh
-{
-	border-top: 1px solid;
-	height: 0px;
+.glineh {
+    border-top: 1px solid;
+    height: 0px;
 }
 
 .gDepFS,
 .gDepSS,
 .gDepSF,
-.gDepFF { border-color: #ff0000; }
+.gDepFF {
+    border-color: #ff0000;
+}
 
 .gDepFSArw,
-.gDepSSArw
-{
-	overflow: hidden;
-	width: 0px;
-	height: 0px;
-	border-bottom: 4px solid transparent;
-	border-left: 4px solid #ff0000;
-	border-top: 4px solid transparent;
-	border-right: 4px solid transparent;
+.gDepSSArw {
+    overflow: hidden;
+    width: 0px;
+    height: 0px;
+    border-bottom: 4px solid transparent;
+    border-left: 4px solid #ff0000;
+    border-top: 4px solid transparent;
+    border-right: 4px solid transparent;
 }
 
 .gDepFFArw,
-.gDepSFArw
-{
-	overflow: hidden;
-	width: 0px;
-	height: 0px;
-	border-bottom: 4px solid transparent;
-	border-left: 4px solid transparent;
-	border-top: 4px solid transparent;
-	border-right: 4px solid #ff0000;
+.gDepSFArw {
+    overflow: hidden;
+    width: 0px;
+    height: 0px;
+    border-bottom: 4px solid transparent;
+    border-left: 4px solid transparent;
+    border-top: 4px solid transparent;
+    border-right: 4px solid #ff0000;
 }
 
-.gCurDate { border-color: #0000ff; }
-
-div.gtaskbarcontainer
-{
-	z-index: 3;
-	position: absolute;
-	top: 0px;
+.gCurDate {
+    border-color: #0000ff;
 }
 
-.JSGanttToolTip
-{
-	position: absolute;
-	display: block;
-	z-index: 5;
+div.gtaskbarcontainer {
+    z-index: 3;
+    position: absolute;
+    top: 0px;
 }
 
-.JSGanttToolTipcont
-{
-	font-size: 12px;
-	display: block;
-	background: #363636;
-	color: #ffffff;
+.JSGanttToolTip {
+    position: absolute;
+    display: block;
+    z-index: 5;
 }
 
-.gTaskInfo
-{
-	background: #333333;
-	width: 360px;
-	max-width: 80%;
-	border: 1px solid #ffffff;
-	opacity: 0.96;
-	color: #ffffff;
-	border-radius: 10px;
-	box-shadow: 0px 0px 10px #000000;
-	padding: 10px;
-	float: left;
-	overflow: hidden;
-	white-space: nowrap;
+.JSGanttToolTipcont {
+    font-size: 12px;
+    display: block;
+    background: #363636;
+    color: #ffffff;
 }
 
-.gTtTitle
-{
-	display: block;
-	font-size: 14px;
-	font-weight: bold;
-	color: #ffffff;
-	margin-left: 5px;
-	margin-bottom: 1em;
-	overflow: hidden;
-	white-space: nowrap;
+.gTaskInfo {
+    background: #333333;
+    width: 360px;
+    max-width: 80%;
+    border: 1px solid #ffffff;
+    opacity: 0.96;
+    color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px #000000;
+    padding: 10px;
+    float: left;
+    overflow: hidden;
+    white-space: nowrap;
 }
 
-.gTtTitle a
-{
-	color: #ffffff;
-	text-decoration: underline;
+.gTtTitle {
+    display: block;
+    font-size: 14px;
+    font-weight: bold;
+    color: #ffffff;
+    margin-left: 5px;
+    margin-bottom: 1em;
+    overflow: hidden;
+    white-space: nowrap;
 }
 
-.gTaskLabel
-{
-	font-size: 12px;
-	font-weight: bold;
-	color: #ffffff;
-	margin-left: 5px;
-	margin-bottom: 0.5em;
+.gTtTitle a {
+    color: #ffffff;
+    text-decoration: underline;
 }
 
-.gTaskText
-{
-	position: absolute;
-	left: 150px;
-	padding-top: 1px;
-	font-size: 12px;
-	font-weight: normal;
-	color: #ffffff;
-	margin-bottom: 0.5em;
+.gTaskLabel {
+    font-size: 12px;
+    font-weight: bold;
+    color: #ffffff;
+    margin-left: 5px;
+    margin-bottom: 0.5em;
 }
 
-.gTaskNotes
-{
-	font-size: 12px;
-	font-weight: normal;
-	color: #ffffff;
-	padding: 5px 15px 15px 15px;
-	display: block;
-	margin-bottom: 0.5em;
-	white-space: normal;
-	word-wrap: break-word;
-	word-break: break-all;
+.gTaskText {
+    position: absolute;
+    left: 150px;
+    padding-top: 1px;
+    font-size: 12px;
+    font-weight: normal;
+    color: #ffffff;
+    margin-bottom: 0.5em;
 }
 
-.gTIn { padding-top: 10px; }
-.gchartcontainer { line-height: 1; }
-.gcontainercol { position: relative; }
-
-.glistgrid
-{
-	min-width: 132px;
-	float: left;
-	padding-right: 0px;
-	padding-left: 0px;
-	padding-bottom: 0px;
-	padding-top: 0px;
-	background-color: #ffffff;
-	overflow: hidden;
+.gTaskNotes {
+    font-size: 12px;
+    font-weight: normal;
+    color: #ffffff;
+    padding: 5px 15px 15px 15px;
+    display: block;
+    margin-bottom: 0.5em;
+    white-space: normal;
+    word-wrap: break-word;
+    word-break: break-all;
 }
 
-.glistlbl
-{
-	min-width: 132px;
-	float: left;
-	padding-right: 0px;
-	padding-left: 0px;
-	padding-bottom: 0px;
-	padding-top: 0px;
-	background-color: #ffffff;
-	overflow: hidden;
+.gTIn {
+    padding-top: 10px;
 }
 
-.glabelfooter { clear: both; }
-.ggridfooter { clear: both; }
-
-.rhscrpad
-{
-	width: 1px;
-	position: absolute;
-	top: 0px;
-	height: 1px;
+.gchartcontainer {
+    line-height: 1;
 }
 
-.gchartgrid
-{
-	padding-right: 0px;
-	padding-left: 0px;
-	padding-bottom: 0px;
-	padding-top: 0px;
-	background-color: #ffffff;
-	position: relative;
-	overflow: unset;
-	min-height: 0%;
+.gcontainercol {
+    position: relative;
 }
 
-.gchartlbl
-{
-	padding-right: 0px;
-	padding-left: 0px;
-	padding-bottom: 0px;
-	padding-top: 0px;
-	background-color: #ffffff;
-	position: relative;
-	overflow: unset;
+.glistgrid {
+    min-width: 132px;
+    float: left;
+    padding-right: 0px;
+    padding-left: 0px;
+    padding-bottom: 0px;
+    padding-top: 0px;
+    background-color: #ffffff;
+    overflow: hidden;
 }
 
-.gantt { _height: 100%; }
-div .gantt { /* _width: 1064px; ie6 fixed width */ }
+.glistlbl {
+    min-width: 132px;
+    float: left;
+    padding-right: 0px;
+    padding-left: 0px;
+    padding-bottom: 0px;
+    padding-top: 0px;
+    background-color: #ffffff;
+    overflow: hidden;
+}
+
+.glabelfooter {
+    clear: both;
+}
+
+.ggridfooter {
+    clear: both;
+}
+
+.rhscrpad {
+    width: 1px;
+    position: absolute;
+    top: 0px;
+    height: 1px;
+}
+
+.gchartgrid {
+    padding-right: 0px;
+    padding-left: 0px;
+    padding-bottom: 0px;
+    padding-top: 0px;
+    background-color: #ffffff;
+    position: relative;
+    overflow: unset;
+    min-height: 0%;
+}
+
+.gchartlbl {
+    padding-right: 0px;
+    padding-left: 0px;
+    padding-bottom: 0px;
+    padding-top: 0px;
+    background-color: #ffffff;
+    position: relative;
+    overflow: unset;
+}
+
+.gantt {
+    _height: 100%;
+}
+
+div .gantt {
+    /* _width: 1064px; ie6 fixed width */
+}
+
 div.gchartlbl,
-div.gchartgrid { /* _width: 532px; */ }
+div.gchartgrid {
+    /* _width: 532px; */
+}
+
 
 /* ie6 fixed width */
+
 div.glistlbl,
-div.glistgrid
-{
-	*right: 0px;
-	/* ie7 pulls the content too far left with the negative margin */
-	_right: 532px;
-	/* but ie6 fixed width needs this */
-	_margin-left: -532px;
-	/* ie6 fixed width */
-	float: left;
+div.glistgrid {
+    *right: 0px;
+    /* ie7 pulls the content too far left with the negative margin */
+    _right: 532px;
+    /* but ie6 fixed width needs this */
+    _margin-left: -532px;
+    /* ie6 fixed width */
+    float: left;
 }
 
-div.gchartgrid
-{
-	*padding-bottom: 20px;
-	*overflow-y: hidden;
+div.gchartgrid {
+    *padding-bottom: 20px;
+    *overflow-y: hidden;
 }
+
 
 /* variable height design, no need for vertical scroll */
-td.gmajorheading div { *overflow: hidden; }
+
+td.gmajorheading div {
+    *overflow: hidden;
+}
+
 
 /* stops resizing fixed width columns if the text is too wide */
-td.gspanning div { *overflow: hidden; }
+
+td.gspanning div {
+    *overflow: hidden;
+}
+
 
 /* stops resizing fixed width columns if the text is too wide */
+
+
 /* border transparency tricks */
-.ggroupblackendpointleft
-{
-	_border-top: 4px solid black;
-	_border-left: 4px solid pink;
-	_border-bottom: 4px solid pink;
-	_border-right: 4px solid pink;
-	_filter: chroma(color=pink);
+
+.ggroupblackendpointleft {
+    _border-top: 4px solid black;
+    _border-left: 4px solid pink;
+    _border-bottom: 4px solid pink;
+    _border-right: 4px solid pink;
+    _filter: chroma(color=pink);
 }
 
-.ggroupblackendpointright
-{
-	_border-top: 4px solid black;
-	_border-left: 4px solid pink;
-	_border-bottom: 4px solid pink;
-	_border-right: 4px solid pink;
-	_filter: chroma(color=pink);
+.ggroupblackendpointright {
+    _border-top: 4px solid black;
+    _border-left: 4px solid pink;
+    _border-bottom: 4px solid pink;
+    _border-right: 4px solid pink;
+    _filter: chroma(color=pink);
 }
 
-.gmdtop
-{
-	_border-left: 5px solid pink;
-	_border-top: 5px solid pink;
-	_border-right: 5px solid pink;
-	_filter: chroma(color=pink);
+.gmdtop {
+    _border-left: 5px solid pink;
+    _border-top: 5px solid pink;
+    _border-right: 5px solid pink;
+    _filter: chroma(color=pink);
 }
 
-.gmdbottom
-{
-	_border-left: 5px solid pink;
-	_border-bottom: 5px solid pink;
-	_border-right: 5px solid pink;
-	_filter: chroma(color=pink);
+.gmdbottom {
+    _border-left: 5px solid pink;
+    _border-bottom: 5px solid pink;
+    _border-right: 5px solid pink;
+    _filter: chroma(color=pink);
 }
 
 .gDepFSArw,
-.gDepSSArw
-{
-	_border-bottom: 4px solid pink;
-	_border-top: 4px solid pink;
-	_border-right: 4px solid pink;
-	_filter: chroma(color=pink);
+.gDepSSArw {
+    _border-bottom: 4px solid pink;
+    _border-top: 4px solid pink;
+    _border-right: 4px solid pink;
+    _filter: chroma(color=pink);
 }
 
 .gDepFFArw,
-.gDepSFArw
-{
-	_border-bottom: 4px solid pink;
-	_border-left: 4px solid pink;
-	_border-top: 4px solid pink;
-	_filter: chroma(color=pink);
+.gDepSFArw {
+    _border-bottom: 4px solid pink;
+    _border-left: 4px solid pink;
+    _border-top: 4px solid pink;
+    _filter: chroma(color=pink);
 }
 
-.glinediv
-{
-	position: absolute;
-	top: 0px;
-	left: 0px;
+.glinediv {
+    position: absolute;
+    top: 0px;
+    left: 0px;
 }
 
-.gantt-inputtable
-{
-	width: 80%;
-	font-size:10px;
-	max-height: 14px;
+.gantt-inputtable {
+    width: 80%;
+    font-size: 10px;
+    max-height: 14px;
 }
 
-.gadditional { border: #efefef 1px solid; }
+.gadditional {
+    border: #efefef 1px solid;
+}
 
 .gadditional,
 .gresource,
 .gduration,
 .gpccomplete,
-.gcost
-{
-	text-align: center;
-	width: 100px;
-	max-width: 100px;
-	overflow: hidden;
-	font-size: 12px;
+.gcost {
+    text-align: center;
+    width: 100px;
+    max-width: 100px;
+    overflow: hidden;
+    font-size: 12px;
 }
 
-.gmain
-{
-	width: 50%;
-	display: inline-block;
-	height: 100%;
+.gmain {
+    width: 50%;
+    display: inline-block;
+    height: 100%;
 }
 
-.gmainright
-{
-	overflow-x: scroll;
-	overflow-y: none;
-	top: 0;
-	width: 60%;
-	vertical-align: top;
+.gmainright {
+    overflow-x: scroll;
+    overflow-y: none;
+    top: 0;
+    width: 60%;
+    vertical-align: top;
 }
 
-.gmainleft
-{
-	overflow-x: scroll;
-	overflow-y: none;
-	width: 40%;
-	vertical-align: top;
+.gmainleft {
+    overflow-x: scroll;
+    overflow-y: none;
+    width: 40%;
+    vertical-align: top;
 }
 
 .gtasktableh tr,
 .gcharttable tr,
-.gtasktable tr { height: 22px !important; }
-.gtasktable { margin-bottom: 14px; }
-
-.gmainleft table td
-{
-	padding-left: 10px;
-	padding-right: 10px;
+.gtasktable tr {
+    height: 22px !important;
 }
 
-.frame::-webkit-scrollbar , .gmainleft::-webkit-scrollbar , .gmainright::-webkit-scrollbar , .gantt-scroll-controll::-webkit-scrollbar
-{
-	-webkit-appearance: none;
-	width: 10px;
-	height: 10px;
+.gtasktable {
+    margin-bottom: 14px;
 }
 
-.frame::-webkit-scrollbar-thumb ,  .gmainleft::-webkit-scrollbar-thumb ,  .gmainright::-webkit-scrollbar-thumb  , .gantt-scroll-controll::-webkit-scrollbar-thumb 
-{
-	border-radius: 0px;
-	background: #e0e0e0;
-	border: 1px solid #c0c0c0;
+.gmainleft table td {
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
-.frame::-webkit-scrollbar-track ,  .gmainleft::-webkit-scrollbar-track ,  .gmainright::-webkit-scrollbar-track  , .gantt-scroll-controll::-webkit-scrollbar-track
-{
-	border-radius: 0px;
-	background: #ffffff;
-	border:0px;
-	border: 1px solid #c0c0c0;
+.frame::-webkit-scrollbar,
+.gmainleft::-webkit-scrollbar,
+.gmainright::-webkit-scrollbar,
+.gantt-scroll-controll::-webkit-scrollbar {
+    -webkit-appearance: none;
+    width: 10px;
+    height: 10px;
 }
 
-.gantt-scroll-controll::-webkit-scrollbar-track
-{
-	border-radius: 0px;
-	background: #ffffff;
-	border: 1px solid #c0c0c0;
+.frame::-webkit-scrollbar-thumb,
+.gmainleft::-webkit-scrollbar-thumb,
+.gmainright::-webkit-scrollbar-thumb,
+.gantt-scroll-controll::-webkit-scrollbar-thumb {
+    border-radius: 0px;
+    background: #e0e0e0;
+    border: 1px solid #c0c0c0;
 }
 
-.frame::-webkit-scrollbar-corner ,  .gmainleft::-webkit-scrollbar-corner ,  .gmainright::-webkit-scrollbar-corner  , .gantt-scroll-controll::-webkit-scrollbar-corner
-{
-	border-radius: 0px;
-	background: #ffffff;
+.frame::-webkit-scrollbar-track,
+.gmainleft::-webkit-scrollbar-track,
+.gmainright::-webkit-scrollbar-track,
+.gantt-scroll-controll::-webkit-scrollbar-track {
+    border-radius: 0px;
+    background: #ffffff;
+    border: 0px;
+    border: 1px solid #c0c0c0;
 }
 
+.gantt-scroll-controll::-webkit-scrollbar-track {
+    border-radius: 0px;
+    background: #ffffff;
+    border: 1px solid #c0c0c0;
+}
 
-/*
-https://github.com/jsGanttImproved/jsgantt-improved/blob/master/Documentation.md
-*/
+.frame::-webkit-scrollbar-corner,
+.gmainleft::-webkit-scrollbar-corner,
+.gmainright::-webkit-scrollbar-corner,
+.gantt-scroll-controll::-webkit-scrollbar-corner {
+    border-radius: 0px;
+    background: #ffffff;
+}
