@@ -1,20 +1,22 @@
+// ------ BEGIN ------
+;
 (function(f) {
     if (typeof exports === "object" && typeof module !== "undefined") {
-        module.exports = f()
+        module.exports = f();
     } else if (typeof define === "function" && define.amd) {
-        define([], f)
+        define([], f);
     } else {
         var g;
         if (typeof window !== "undefined") {
-            g = window
+            g = window;
         } else if (typeof global !== "undefined") {
-            g = global
+            g = global;
         } else if (typeof self !== "undefined") {
-            g = self
+            g = self;
         } else {
-            g = this
+            g = this;
         }
-        g.JSGantt = f()
+        g.JSGantt = f();
     }
 })(function() {
     var define,
@@ -30,23 +32,22 @@
                     if (i)
                         return i(o, !0);
                     var f = new Error("Cannot find module '" + o + "'");
-                    throw f.code = "MODULE_NOT_FOUND",
-                        f
+                    throw f.code = "MODULE_NOT_FOUND", f;
                 }
                 var l = n[o] = {
                     exports: {}
                 };
                 t[o][0].call(l.exports, function(e) {
                     var n = t[o][1][e];
-                    return s(n ? n : e)
+                    return s(n ? n : e);
                 }, l, l.exports, e, t, n, r)
             }
-            return n[o].exports
+            return n[o].exports;
         }
         var i = typeof require == "function" && require;
         for (var o = 0; o < r.length; o++)
             s(r[o]);
-        return s
+        return s;
     })({
         1: [function(require, module, exports) {
             "use strict";
@@ -56,7 +57,6 @@
             var jsGantt = require("./src/jsgantt");
             module.exports = jsGantt.JSGantt;
             exports.JSGantt = jsGantt.JSGantt;
-
         }, {
             "./src/jsgantt": 4
         }],
@@ -82,7 +82,7 @@
             exports.GanttChart = function(pDiv, pFormat, pGanttHeight) {
                 this.vDiv = pDiv;
                 this.vFormat = pFormat;
-                this.vGanttHeight = pGanttHeight;
+                this.vGanttHeight = Math.min(pGanttHeight, $(window).height());
                 this.vDivId = null;
                 this.vUseFade = 0;
                 this.vUseMove = 0;
@@ -167,12 +167,12 @@
                 this.vMonthDaysArr = new Array(31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31);
                 this.vProcessNeeded = true;
                 this.vScrollTo = '';
-                this.vMinGpLen = 12; //minus col width =  vMinGpLen*2
-                this.vHourColWidth = 24;
-                this.vDayColWidth = 48;
-                this.vWeekColWidth = 48;
-                this.vMonthColWidth = 48;
-                this.vQuarterColWidth = 24;
+                this.vMinGpLen = 15; //minus col width =  vMinGpLen*2
+                this.vHourColWidth = 30;
+                this.vDayColWidth = 60;
+                this.vWeekColWidth = 60;
+                this.vMonthColWidth = 60;
+                this.vQuarterColWidth = 40;
                 this.vRowHeight = 20;
                 this.vTodayPx = -1;
                 this.vLangs = lang;
@@ -182,7 +182,7 @@
                 this.vListBody = null;
                 this.vChartTable = null;
                 this.vLines = null;
-                this.vTimer = 10;
+                this.vTimer = 5;
                 this.vTooltipDelay = 1000;
                 this.includeGetSet = options_1.includeGetSet.bind(this);
                 this.includeGetSet();
@@ -1056,44 +1056,64 @@
                     //disable user selection
                     $('.gantt , .JSGanttToolTip').attr('unselectable', 'on').css('user-select', 'none').on('selectstart', false);
                     var vGanttContainer = $('#' + this.vDivId + '>div.gchartcontainer');
-                    var vGanttLeftPart = $('#' + this.vDivId + '>div.gchartcontainer>div.gmainleft');
-                    //var vGanttRightPart = $('#' + this.vDivId + '>div.gchartcontainer>div.gmainright'); //not used
-                    var vGanttListHeadId = '#' + this.vDivId + '_OSgwn_GANTT_LIST_HEAD';
-                    var vGanttListBodyId = '#' + this.vDivId + '_OSgwn_GANTT_LIST_BODY';
-                    var vGanttChartHeadId = '#' + this.vDivId + '_OSgwn_GANTT_CHART_HEAD';
-                    var vGanttChartBodyId = '#' + this.vDivId + '_OSgwn_GANTT_CHART_BODY';
-                    var vGanttChartTableId = '#' + this.vDivId + '_ChartTableBody';
-                    vGanttLeftPart.width(vGanttLeftPart.width() - 1).css('border-right', '1px solid #c0c0c0'); // add a line between left and right
-                    $(vGanttChartBodyId).width($(vGanttChartTableId).width() + 1); //adjust chart body DIV width to chart's width
-                    //height control
-                    if ($(vGanttListBodyId).height() > this.vGanttHeight - $(vGanttListHeadId).outerHeight(true) || $(vGanttChartBodyId).height() > this.vGanttHeight - $(vGanttChartHeadId).outerHeight(true)) {
-                        $(vGanttListBodyId).addClass('gantt-scroll-controll').css({
-                            'height': this.vGanttHeight - $(vGanttListHeadId).outerHeight(true),
-                            'overflow-y': 'auto',
-                            'overflow-x': 'hidden'
-                        });
-                        $(vGanttChartBodyId).addClass('gantt-scroll-controll').css({
-                            'height': this.vGanttHeight - $(vGanttChartHeadId).outerHeight(true),
-                            'overflow-y': 'auto',
-                            'overflow-x': 'hidden'
-                        });
-                        $(vGanttChartBodyId).scroll(function() {
-                            $(vGanttListBodyId).scrollTop($(this).scrollTop());
-                        });
-                        $(vGanttListBodyId).scroll(function() {
-                            $(vGanttChartBodyId).scrollTop($(this).scrollTop());
-                        });
-                    }
                     vGanttContainer.append('<div class="ggridfooter"></div>');
-                    //add listener to adjust gtaskname col width
+                    var vGanttObjId = this.vDivId;
+                    var vGanttHeightValue = Math.max(Math.min(this.vGanttHeight, $(window).height() - 40), 200); //scroll less than window height
+                    var vGanttListHeadId = '#' + vGanttObjId + '_OSgwn_GANTT_LIST_HEAD';
+                    var vGanttListBodyId = '#' + vGanttObjId + '_OSgwn_GANTT_LIST_BODY';
+                    var vGanttChartHeadId = '#' + vGanttObjId + '_OSgwn_GANTT_CHART_HEAD';
+                    var vGanttChartBodyId = '#' + vGanttObjId + '_OSgwn_GANTT_CHART_BODY';
+                    var vGanttChartTableId = '#' + vGanttObjId + '_ChartTableBody';
+                    //adjust chart body DIV width to chart's width
+                    $(vGanttChartBodyId).width($(vGanttChartTableId).width() + 20);
+                    //if window's width<=768px , left and right will be two vertical parts
+                    if ($(window).width() <= 768) {
+                        $('#' + vGanttObjId + ' div.gchartcontainer div.gmainleft').css('width', '100%');
+                        $('#' + vGanttObjId + ' div.gchartcontainer div.gmainright').css('width', '100%');
+                    } else {
+                        $('#' + vGanttObjId + ' div.gchartcontainer div.gmainleft').css('width', '40%');
+                        $('#' + vGanttObjId + ' div.gchartcontainer div.gmainright').css('width', '60%');
+                    }
+                    //height control
+                    var vScrollHeightValue = Math.min(vGanttHeightValue - $(vGanttListHeadId).outerHeight(true), vGanttHeightValue - $(vGanttChartHeadId).outerHeight(true));
+                    $(vGanttListBodyId).addClass('gantt-scroll-controll').css({
+                        'height': vScrollHeightValue,
+                        'overflow-y': 'auto',
+                        'overflow-x': 'hidden'
+                    });
+                    $(vGanttChartBodyId).addClass('gantt-scroll-controll').css({
+                        'height': vScrollHeightValue,
+                        'overflow-y': 'auto',
+                        'overflow-x': 'hidden'
+                    });
+                    //window resize control
+                    $(window).on('resize', function() {
+                        if ($(window).width() <= 768) {
+                            $('#' + vGanttObjId + ' div.gchartcontainer div.gmainleft').css('width', '100%');
+                            $('#' + vGanttObjId + ' div.gchartcontainer div.gmainright').css('width', '100%');
+                        } else {
+                            $('#' + vGanttObjId + ' div.gchartcontainer div.gmainleft').css('width', '40%');
+                            $('#' + vGanttObjId + ' div.gchartcontainer div.gmainright').css('width', '60%');
+                        }
+                    });
+                    //scroll control
+                    $(vGanttChartBodyId).scroll(function() {
+                        $(vGanttListBodyId).scrollTop($(this).scrollTop());
+                    });
+                    $(vGanttListBodyId).scroll(function() {
+                        $(vGanttChartBodyId).scrollTop($(this).scrollTop());
+                    });
+                    /*
+                    // task name width control moved to folder_click listener
                     var vGanttTaskTableHeadId = '#' + this.vDivId + '_TaskTableHead';
                     var vGanttTaskTableBodyId = '#' + this.vDivId + '_TaskTableBody';
                     setInterval(function() {
                         $(vGanttTaskTableHeadId + ' td.gtaskname div').css({
-                            'width': $(vGanttTaskTableBodyId + ' td.gtaskname').eq(0).width(),
-                            'max-width': $(vGanttTaskTableBodyId + ' td.gtaskname').eq(0).width()
+                    	'width': $(vGanttTaskTableBodyId + ' td.gtaskname').eq(0).width(),
+                    	'max-width': $(vGanttTaskTableBodyId + ' td.gtaskname').eq(0).width()
                         });
                     }, 50);
+                    */
                 }; //this.draw
                 this.drawSelector = function(pPos) {
                     var vOutput = document.createDocumentFragment();
@@ -1593,8 +1613,7 @@
                 exports.addJSONTask(pGanttVar, eval('(' + pStr + ')'));
             };
             exports.addJSONTask = function(pGanttVar, pJsonObj) {
-                if ({}
-                    .toString.call(pJsonObj) === '[object Array]') {
+                if ({}.toString.call(pJsonObj) === '[object Array]') {
                     for (var index = 0; index < pJsonObj.length; index++) {
                         var id = void 0;
                         var name_1 = void 0;
@@ -2286,6 +2305,37 @@
                     var ad = new Date();
                     console.log('after drawDependency', ad, (ad.getTime() - bd.getTime()));
                 }
+                /*
+                when folder close and open , gantt chart height will be changed,
+                we must control height...
+                */
+                var vGanttTaskTableHeadId = '#' + ganttObj.vDivId + '_TaskTableHead';
+                var vGanttTaskTableBodyId = '#' + ganttObj.vDivId + '_TaskTableBody';
+                var vGanttListHeadId = '#' + ganttObj.vDivId + '_OSgwn_GANTT_LIST_HEAD';
+                var vGanttListBodyId = '#' + ganttObj.vDivId + '_OSgwn_GANTT_LIST_BODY';
+                var vGanttChartHeadId = '#' + ganttObj.vDivId + '_OSgwn_GANTT_CHART_HEAD';
+                var vGanttChartBodyId = '#' + ganttObj.vDivId + '_OSgwn_GANTT_CHART_BODY';
+                var vGanttHeightValue = Math.max(Math.min(ganttObj.vGanttHeight, $(window).height() - 40), 200); //scroll less than window height
+                //height control 
+                var vScrollHeightValue = Math.min(vGanttHeightValue - $(vGanttListHeadId).outerHeight(true), vGanttHeightValue - $(vGanttChartHeadId).outerHeight(true));
+                $(vGanttListBodyId).addClass('gantt-scroll-controll').css({
+                    'height': vScrollHeightValue,
+                    'overflow-y': 'auto',
+                    'overflow-x': 'hidden'
+                });
+                $(vGanttChartBodyId).addClass('gantt-scroll-controll').css({
+                    'height': vScrollHeightValue,
+                    'overflow-y': 'auto',
+                    'overflow-x': 'hidden'
+                });
+                /*
+                when folder close and open , task name column width will be changed,
+                we must control width...
+                */
+                $(vGanttTaskTableHeadId + ' td.gtaskname div').css({
+                    'width': $(vGanttTaskTableBodyId + ' td.gtaskname').eq(0).width(),
+                    'max-width': $(vGanttTaskTableBodyId + ' td.gtaskname').eq(0).width()
+                });
             };
             exports.hide = function(pID, ganttObj) {
                 var vList = ganttObj.getList();
@@ -2307,8 +2357,6 @@
                 }
             };
             // Function to show children of specified task
-
-
             exports.show = function(pID, pTop, ganttObj) {
                 var vList = ganttObj.getList();
                 var vID = 0;
@@ -3876,4 +3924,5 @@ function DomPortalUI_Gantt(gantt_div_id, gantt_format, gantt_height, gantt_data_
     g.Draw();
     after_draw_gantt(g);
     return g;
-}
+};
+// ------ END ------
